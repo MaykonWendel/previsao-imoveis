@@ -3,5 +3,10 @@
 Projeto de Machine Learning para estimar o valor do aluguel de imóveis brasileiros.
 
 ## Dados
-- Fonte: Kaggle, "Brazilian Houses to Rent" (rubenssjr)
-- Local: `data/raw/imoveis.csv` (não versionado; baixe do Kaggle e coloque nessa pasta)
+- Fonte: OpenML
+- Local: `data/raw/`
+  
+## Como obter os dados
+```bash
+python -c "from sklearn.datasets import fetch_openml; df = fetch_openml(data_id=42688, as_frame=True, parser='liac-arff').frame; df.to_csv('data/raw/imoveis.csv', index=False)"
+```
